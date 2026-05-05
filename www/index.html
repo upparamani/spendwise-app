@@ -12,24 +12,147 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>SpendWise - Monthly Plan</title>
 <style>
-:root{--bg:#0c0c0e;--surface:#141416;--card:#1a1a1e;--border:rgba(255,255,255,.1);--border2:rgba(255,255,255,.16);--accent:#c8f250;--accent2:#a8d930;--text:#f1f1f1;--muted:#777783;--muted2:#a1a1aa;--danger:#f87171;--warn:#fbbf24;--ok:#4ade80;--radius:12px;--sm:8px}
-*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;min-height:100vh}.app{max-width:540px;margin:0 auto;padding-bottom:92px}header{position:sticky;top:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--border);padding:16px 18px 12px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.title{font-family:Consolas,monospace;color:var(--accent);font-size:1.1rem;letter-spacing:.04em}.title span{color:var(--muted2)}.actions{display:flex;gap:8px}.icon,.month button{height:34px;min-width:34px;border:1px solid var(--border);border-radius:var(--sm);background:var(--card);color:var(--muted2);cursor:pointer}.icon:hover,.month button:hover{border-color:var(--border2);color:var(--accent)}.month{display:flex;justify-content:space-between;align-items:center}.month-label{font-family:Consolas,monospace;font-weight:700}.month-label span{color:var(--muted);font-weight:400;font-size:.86rem}.summary{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:14px 18px}.pill,.panel,.card,.total{background:var(--card);border:1px solid var(--border);border-radius:var(--radius)}.pill{text-align:center;padding:9px}.pill b{display:block;font-family:Consolas,monospace;font-size:.92rem}.pill small,.cell small{display:block;color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em}.green{color:var(--ok)}.yellow{color:var(--warn)}.lime{color:var(--accent)}.red{color:var(--danger)}.panel{margin:0 18px 10px;padding:14px}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.panel-title,.section{font-family:Consolas,monospace;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.cell{background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:var(--sm);padding:10px}.cell b{font-family:Consolas,monospace;font-size:.95rem}.balance{grid-column:1/-1;background:rgba(200,242,80,.06);border-color:rgba(200,242,80,.2)}.balance.negative{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.25)}.inflows{border-top:1px solid var(--border);margin-top:10px;padding-top:8px}.inflow{display:flex;justify-content:space-between;color:var(--muted2);font-size:.82rem;padding:4px 0}.inflow span:last-child{font-family:Consolas,monospace;color:var(--ok)}.tabs{display:flex;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:0}.tab{border:0;background:transparent;color:var(--muted);padding:11px 0;border-bottom:2px solid transparent;font-weight:700;font-size:.78rem;white-space:nowrap;cursor:pointer;flex:1;text-align:center}.tab.active{color:var(--accent);border-bottom-color:var(--accent)}.content{display:none;padding:0 18px}.content.active{display:block}.section{display:flex;justify-content:space-between;padding:18px 0 10px}.count{border:1px solid var(--border);border-radius:99px;padding:2px 8px;color:var(--muted2)}.card{padding:14px 15px;margin-bottom:8px}.row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.name{font-weight:700;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{display:flex;gap:6px;flex-wrap:wrap}.badge{font-family:Consolas,monospace;font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted2);border:1px solid var(--border);background:rgba(255,255,255,.05);border-radius:5px;padding:2px 7px}.overdue{color:var(--danger);border-color:rgba(248,113,113,.3);background:rgba(248,113,113,.12)}.today{color:var(--warn);border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.12)}.right{display:flex;flex-direction:column;align-items:flex-end;gap:7px}.amount{font-family:Consolas,monospace;font-weight:700}.btn{border:0;border-radius:var(--sm);padding:7px 12px;font-weight:700;cursor:pointer;background:rgba(255,255,255,.06);color:var(--muted2);border:1px solid var(--border)}.btn:hover{border-color:var(--border2);color:var(--text)}.primary{background:var(--accent);color:#111;border-color:transparent}.primary:hover{background:var(--accent2);color:#111}.danger{background:rgba(248,113,113,.12);color:var(--danger);border-color:rgba(248,113,113,.25)}.small{font-size:.74rem;padding:5px 9px}.empty{text-align:center;color:var(--muted);padding:32px 12px;line-height:1.6}.total{display:flex;justify-content:space-between;padding:14px;margin-top:8px}.modal-wrap{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:10;align-items:flex-end;justify-content:center}.modal-wrap.open{display:flex}.modal{background:var(--surface);border:1px solid var(--border2);border-radius:14px 14px 0 0;max-width:540px;width:100%;padding:22px 18px 28px;max-height:90vh;overflow:auto}.modal h2{font-size:1.05rem;margin-bottom:16px}.close{float:right;background:0;border:0;color:var(--muted);font-size:1.2rem;cursor:pointer}.field{margin-bottom:13px}label{display:block;color:var(--muted2);font-family:Consolas,monospace;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}input,select{width:100%;background:var(--card);border:1px solid var(--border2);border-radius:var(--sm);color:var(--text);padding:10px 11px;font-size:.92rem}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form-grid.three{grid-template-columns:1fr 1fr 1fr}.modal-actions{display:flex;gap:10px;margin-top:18px}.modal-actions .btn{flex:1;padding:11px}.toast{position:fixed;left:50%;bottom:82px;transform:translateX(-50%) translateY(15px);background:var(--card);border:1px solid var(--border2);padding:10px 16px;border-radius:var(--radius);opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.nav{position:fixed;bottom:0;left:0;right:0;max-width:540px;margin:0 auto;display:flex;background:var(--surface);border-top:1px solid var(--border)}.nav button{flex:1;background:0;border:0;color:var(--muted);padding:12px 4px;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}.nav button.active{color:var(--accent)}body.theme-light{--bg:#f8faf7;--surface:#ffffff;--card:#ffffff;--border:rgba(25,35,45,.14);--border2:rgba(25,35,45,.24);--accent:#1d4ed8;--accent2:#1e40af;--text:#111827;--muted:#5f6875;--muted2:#374151;--danger:#b91c1c;--warn:#9a5b00;--ok:#166534}
+:root{
+  --bg:#0c0c0e;--surface:#141416;--card:#1a1a1e;
+  --border:rgba(255,255,255,.1);--border2:rgba(255,255,255,.16);
+  --accent:#c8f250;--accent2:#a8d930;
+  --text:#f1f1f1;--muted:#777783;--muted2:#a1a1aa;
+  --danger:#f87171;--warn:#fbbf24;--ok:#4ade80;
+  --radius:12px;--sm:8px;
+  --touch:44px; /* min touch target */
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+/* ── RESET ── */
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{font-size:15px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;min-height:100vh;overscroll-behavior:none}
+input,select,button{font-family:inherit}
+/* ── LAYOUT ── */
+.app{max-width:540px;margin:0 auto;padding-bottom:calc(72px + var(--safe-b))}
+/* ── HEADER ── */
+header{position:sticky;top:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--border);padding:10px 14px 10px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px}
+.title{font-family:Consolas,monospace;color:var(--accent);font-size:1rem;letter-spacing:.04em;white-space:nowrap}
+.title span{color:var(--muted2)}
+/* actions: show only icon buttons, overflow in dropdown */
+.actions{display:flex;gap:6px;align-items:center;flex-shrink:0}
+.icon,.month button{height:var(--touch);min-width:var(--touch);border:1px solid var(--border);border-radius:var(--sm);background:var(--card);color:var(--muted2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;padding:0 8px;font-family:Arial,Helvetica,sans-serif}
+.icon:active,.month button:active{border-color:var(--border2);color:var(--accent)}
+/* overflow menu */
+.menu-wrap{position:relative}
+.menu-btn{height:var(--touch);min-width:var(--touch);border:1px solid var(--border);border-radius:var(--sm);background:var(--card);color:var(--muted2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700}
+.menu-drop{display:none;position:absolute;top:calc(100% + 4px);right:0;background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius);z-index:20;min-width:150px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.menu-drop.open{display:block}
+.menu-item{display:flex;align-items:center;width:100%;padding:14px 16px;background:none;border:none;color:var(--text);font-size:.88rem;font-weight:700;cursor:pointer;border-bottom:1px solid var(--border);text-align:left;gap:8px}
+.menu-item:last-child{border-bottom:none}
+.menu-item:active{background:rgba(255,255,255,.06)}
+.menu-item.danger{color:var(--danger)}
+/* ── MONTH NAV ── */
+.month{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.month button{flex-shrink:0;padding:0 14px;font-size:.85rem}
+.month-label{font-family:Consolas,monospace;font-weight:700;font-size:1rem;text-align:center}
+.month-label span{color:var(--muted);font-weight:400;font-size:.86rem}
+/* ── SUMMARY STRIP ── */
+.summary{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:10px 14px}
+.pill,.panel,.card,.total{background:var(--card);border:1px solid var(--border);border-radius:var(--radius)}
+.pill{text-align:center;padding:8px 4px}
+.pill b{display:block;font-family:Consolas,monospace;font-size:.88rem}
+.pill small,.cell small{display:block;color:var(--muted);font-size:.65rem;text-transform:uppercase;letter-spacing:.06em}
+/* ── MONEY PLAN PANEL ── */
+.panel{margin:0 14px 10px;padding:13px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.panel-title,.section{font-family:Consolas,monospace;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cell{background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:var(--sm);padding:9px}
+.cell b{font-family:Consolas,monospace;font-size:.9rem}
+.balance{grid-column:1/-1;background:rgba(200,242,80,.06);border-color:rgba(200,242,80,.2)}
+.balance.negative{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.25)}
+.inflows{border-top:1px solid var(--border);margin-top:10px;padding-top:8px}
+.inflow{display:flex;justify-content:space-between;color:var(--muted2);font-size:.82rem;padding:4px 0}
+.inflow span:last-child{font-family:Consolas,monospace;color:var(--ok)}
+/* ── TABS (top) ── */
+.tabs{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
+.tab{border:0;background:transparent;color:var(--muted);padding:0;height:46px;border-bottom:2px solid transparent;font-weight:700;font-size:.72rem;cursor:pointer;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+/* ── CONTENT ── */
+.content{display:none;padding:0 14px}
+.content.active{display:block}
+.section{display:flex;justify-content:space-between;align-items:center;padding:16px 0 9px}
+.count{border:1px solid var(--border);border-radius:99px;padding:2px 8px;color:var(--muted2);font-size:.78rem}
+/* ── CARDS ── */
+.card{padding:13px 13px;margin-bottom:8px}
+.row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.name{font-weight:700;margin-bottom:5px;font-size:.92rem}
+.meta{display:flex;gap:5px;flex-wrap:wrap}
+.badge{font-family:Consolas,monospace;font-size:.64rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted2);border:1px solid var(--border);background:rgba(255,255,255,.05);border-radius:5px;padding:2px 6px}
+.overdue{color:var(--danger);border-color:rgba(248,113,113,.3);background:rgba(248,113,113,.12)}
+.today{color:var(--warn);border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.12)}
+.right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.amount{font-family:Consolas,monospace;font-weight:700;font-size:.95rem}
+/* ── BUTTONS ── */
+.btn{border:0;border-radius:var(--sm);padding:0 12px;height:var(--touch);min-height:var(--touch);font-weight:700;cursor:pointer;background:rgba(255,255,255,.06);color:var(--muted2);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;font-size:.82rem;gap:5px}
+.btn:active{border-color:var(--border2);color:var(--text)}
+.primary{background:var(--accent);color:#111;border-color:transparent}
+.primary:active{background:var(--accent2)}
+.danger{background:rgba(248,113,113,.12);color:var(--danger);border-color:rgba(248,113,113,.25)}
+.small{height:36px;min-height:36px;padding:0 9px;font-size:.74rem}
+.empty{text-align:center;color:var(--muted);padding:32px 12px;line-height:1.6}
+.total{display:flex;justify-content:space-between;align-items:center;padding:13px;margin-top:8px}
+/* colors */
+.green{color:var(--ok)}.yellow{color:var(--warn)}.lime{color:var(--accent)}.red{color:var(--danger)}
+/* ── MODALS ── */
+.modal-wrap{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:10;align-items:flex-end;justify-content:center}
+.modal-wrap.open{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border2);border-radius:14px 14px 0 0;max-width:540px;width:100%;padding:20px 16px calc(20px + var(--safe-b));max-height:90vh;overflow-y:auto}
+.modal h2{font-size:1rem;margin-bottom:15px}
+.close{float:right;background:0;border:0;color:var(--muted);font-size:1.3rem;cursor:pointer;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:flex-end;margin-top:-4px}
+.field{margin-bottom:12px}
+label{display:block;color:var(--muted2);font-family:Consolas,monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+input,select{width:100%;background:var(--card);border:1px solid var(--border2);border-radius:var(--sm);color:var(--text);padding:12px 11px;font-size:.92rem;height:48px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-grid.three{grid-template-columns:1fr 1fr 1fr}
+.modal-actions{display:flex;gap:10px;margin-top:16px}
+.modal-actions .btn{flex:1;height:50px;font-size:.9rem}
+/* ── TOAST ── */
+.toast{position:fixed;left:50%;bottom:calc(80px + var(--safe-b));transform:translateX(-50%) translateY(15px);background:var(--card);border:1px solid var(--border2);padding:10px 16px;border-radius:var(--radius);opacity:0;transition:.2s;pointer-events:none;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis;z-index:20}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* ── BOTTOM NAV ── */
+.nav{position:fixed;bottom:0;left:0;right:0;max-width:540px;margin:0 auto;display:flex;background:var(--surface);border-top:1px solid var(--border);height:calc(56px + var(--safe-b));padding-bottom:var(--safe-b)}
+.nav button{flex:1;background:0;border:0;color:var(--muted);padding:0;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;min-height:var(--touch)}
+.nav button.active{color:var(--accent)}
+/* ── THEMES ── */
+body.theme-light{--bg:#f8faf7;--surface:#fff;--card:#fff;--border:rgba(25,35,45,.14);--border2:rgba(25,35,45,.24);--accent:#1d4ed8;--accent2:#1e40af;--text:#111827;--muted:#5f6875;--muted2:#374151;--danger:#b91c1c;--warn:#9a5b00;--ok:#166534}
+body.theme-sunrise{--bg:#fffbf2;--surface:#fff8ec;--card:#fff;--border:rgba(180,120,0,.15);--border2:rgba(180,120,0,.28);--accent:#d97706;--accent2:#b45309;--text:#1c1007;--muted:#92714a;--muted2:#5c3d1a;--danger:#b91c1c;--warn:#92400e;--ok:#166534}
 body.theme-ink{--bg:#101114;--surface:#18191d;--card:#202127;--border:rgba(255,255,255,.09);--border2:rgba(255,255,255,.18);--accent:#64d2ff;--accent2:#39bdf0;--text:#f2f5f7;--muted:#747d86;--muted2:#a4adb7;--danger:#ff7a7a;--warn:#ffd166;--ok:#57d68d}
 body.theme-rose{--bg:#160f13;--surface:#21171c;--card:#2a1d23;--border:rgba(255,255,255,.1);--border2:rgba(255,255,255,.18);--accent:#f5a3b7;--accent2:#ed7898;--text:#fff3f6;--muted:#8e737d;--muted2:#c8a8b3;--danger:#ff7f7f;--warn:#f4bd62;--ok:#80d49f}
 body.theme-forest{--bg:#07130f;--surface:#0d1c16;--card:#13261e;--border:rgba(214,255,230,.1);--border2:rgba(214,255,230,.18);--accent:#7ee0a3;--accent2:#50c57d;--text:#eefbf2;--muted:#6f8b7b;--muted2:#a8c4b4;--danger:#fb7185;--warn:#facc15;--ok:#86efac}
-.check-row{display:flex;align-items:center;gap:9px;color:var(--muted2);font-family:Arial,Helvetica,sans-serif;font-size:.9rem;text-transform:none;letter-spacing:0;margin-top:-2px}.check-row input{width:auto;accent-color:var(--accent)}.theme-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.theme-choice{text-align:left;padding:12px}.theme-choice b{display:block;margin-bottom:4px}.theme-choice small{color:var(--muted2)}@media(max-width:430px){.form-grid,.form-grid.three,.grid{grid-template-columns:1fr}.summary{margin-left:12px;margin-right:12px}.panel,.content{margin-left:12px;margin-right:12px;padding-left:0;padding-right:0}.panel{padding:12px}.tabs{padding:0 12px}}
-</style>
-<style>
-.icon,.month button{font-family:Arial,Helvetica,sans-serif;font-weight:700}
-.icon.text-icon,.month button{padding:0 10px}
+/* ── SPECIALS ── */
+.check-row{display:flex;align-items:center;gap:9px;color:var(--muted2);font-size:.9rem;text-transform:none;letter-spacing:0}
+.check-row input{width:auto;accent-color:var(--accent);width:20px;height:20px}
+.theme-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.theme-choice{text-align:left;padding:12px;height:auto;min-height:56px;flex-direction:column;align-items:flex-start;gap:3px}
+.theme-choice b{display:block;font-size:.88rem}
+.theme-choice small{color:var(--muted2);font-weight:400;font-size:.74rem}
 .clear-data{color:var(--danger);border-color:rgba(248,113,113,.28)}
-.clear-data:hover{color:#fff;background:rgba(248,113,113,.18);border-color:rgba(248,113,113,.5)}
 .pay-btn{background:#ffd6e7;color:#7f1239;border-color:#f9a8c9}
-.pay-btn:hover{background:#f9a8c9;color:#5f0f2e;border-color:#f472b6}
 .important-badge{color:#111;background:#c8ff00;border-color:#9fee00}
-.float-history{position:fixed;right:18px;bottom:74px;z-index:6;border:1px solid var(--border2);border-radius:999px;background:var(--accent);color:#111;padding:10px 14px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.18);cursor:pointer}
-.float-history:hover{background:var(--accent2)}
+.float-history{position:fixed;right:14px;bottom:calc(68px + var(--safe-b));z-index:6;border:1px solid var(--border2);border-radius:999px;background:var(--accent);color:#111;padding:0 16px;height:44px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.18);cursor:pointer;display:flex;align-items:center;font-size:.82rem}
+/* ── SMALL SCREEN OVERRIDES (360–480px) ── */
+@media(max-width:480px){
+  .form-grid.three{grid-template-columns:1fr 1fr}
+  .summary{margin-left:10px;margin-right:10px;gap:5px}
+  .panel{margin-left:10px;margin-right:10px}
+  .content{padding-left:10px;padding-right:10px}
+  .pill b{font-size:.82rem}
+}
+@media(max-width:360px){
+  .form-grid{grid-template-columns:1fr}
+  .form-grid.three{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .summary{grid-template-columns:1fr 1fr 1fr}
+}
 </style>
+
 </head>
 <body>
 <div class="app">
@@ -37,13 +160,18 @@ body.theme-forest{--bg:#07130f;--surface:#0d1c16;--card:#13261e;--border:rgba(21
     <div class="top">
       <div class="title">SpendWise <span>/ plan</span></div>
       <div class="actions">
-        <button class="icon text-icon" onclick="exportData()" title="Export all data">Export</button>
-        <button class="icon text-icon" onclick="document.getElementById('importFile').click()" title="Import all data">Import</button>
+        <div class="menu-wrap">
+          <button class="icon menu-btn" onclick="toggleMenu()" title="More options">⋮</button>
+          <div class="menu-drop" id="mainMenu">
+            <button class="menu-item" onclick="exportData();toggleMenu()">⬇ Export</button>
+            <button class="menu-item" onclick="document.getElementById('importFile').click();toggleMenu()">⬆ Import</button>
+            <button class="menu-item" onclick="scanDuplicates();toggleMenu()">2×? Scan Dups</button>
+            <button class="menu-item danger" onclick="clearAllData();toggleMenu()">✕ Clear Data</button>
+          </div>
+        </div>
         <input hidden type="file" id="importFile" accept=".json" onchange="importData(event)">
-        <button class="icon text-icon clear-data" onclick="clearAllData()" title="Export backup, then clear all bills, payments, and plans">Clear</button>
-        <button class="icon" onclick="scanDuplicates()" title="Scan for duplicate bills and payments" style="font-size:.75rem;font-weight:700;padding:0 7px;letter-spacing:-.02em">2×?</button>
-        <button class="icon" onclick="openThemeModal()" title="Theme">T</button>
-        <button class="icon" onclick="openAddBill()" title="Add bill">+</button>
+        <button class="icon" onclick="openThemeModal()" title="Theme / Reset">T</button>
+        <button class="icon" onclick="openAddBill()" title="Add bill" style="font-size:1.2rem">+</button>
       </div>
     </div>
     <div class="month"><button onclick="changeMonth(-1)" title="Previous month">Prev</button><div class="month-label" id="monthLabel"></div><button onclick="changeMonth(1)" title="Next month">Next</button></div>
@@ -51,7 +179,7 @@ body.theme-forest{--bg:#07130f;--surface:#0d1c16;--card:#13261e;--border:rgba(21
   <div class="summary" id="summary"></div>
   <div id="moneyPanel"></div>
   <div class="tabs">
-    <button class="tab active" onclick="switchTab('this')">This</button>
+    <button class="tab active" onclick="switchTab('this')">Month</button>
     <button class="tab" onclick="switchTab('history')">Paid</button>
     <button class="tab" onclick="switchTab('next')">Next</button>
     <button class="tab" onclick="switchTab('important')">★ Key</button>
@@ -69,7 +197,7 @@ body.theme-forest{--bg:#07130f;--surface:#0d1c16;--card:#13261e;--border:rgba(21
 </div>
 <button class="float-history" onclick="switchTab('all-history')" title="All payment history">All History</button>
 <nav class="nav">
-  <button class="active" id="nav-this" onclick="switchTab('this')">This</button>
+  <button class="active" id="nav-this" onclick="switchTab('this')">Month</button>
   <button id="nav-history" onclick="switchTab('history')">Paid</button>
   <button id="nav-next" onclick="switchTab('next')">Next</button>
   <button id="nav-important" onclick="switchTab('important')">★ Key</button>
@@ -105,18 +233,85 @@ body.theme-forest{--bg:#07130f;--surface:#0d1c16;--card:#13261e;--border:rgba(21
   <div class="modal-actions"><button class="btn" onclick="closeModal('payModal')">Cancel</button><button class="btn primary" onclick="confirmPay()">Mark Paid</button></div>
 </div></div>
 <div class="modal-wrap" id="themeModal"><div class="modal">
-  <button class="close" onclick="closeModal('themeModal')">x</button><h2>Theme</h2>
+  <button class="close" onclick="closeModal('themeModal')">x</button><h2>Settings</h2>
+  <div style="color:var(--muted);font-size:.7rem;font-family:Consolas,monospace;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Theme</div>
   <div class="theme-grid">
     <button class="btn theme-choice" onclick="setTheme('dark')"><b>Dark Lime</b><small>Original SpendWise</small></button>
+    <button class="btn theme-choice" onclick="setTheme('sunrise')"><b>☀ Sunrise</b><small>Warm amber, bright</small></button>
     <button class="btn theme-choice" onclick="setTheme('light')"><b>Simple Paper</b><small>Bright, high contrast</small></button>
     <button class="btn theme-choice" onclick="setTheme('ink')"><b>Ink Blue</b><small>Cool dashboard tone</small></button>
     <button class="btn theme-choice" onclick="setTheme('rose')"><b>Rose</b><small>Warm low-light</small></button>
     <button class="btn theme-choice" onclick="setTheme('forest')"><b>Forest</b><small>Green and calm</small></button>
   </div>
-  <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px">
-    <div style="color:var(--muted);font-size:.75rem;margin-bottom:10px;font-family:Consolas,monospace;text-transform:uppercase;letter-spacing:.06em">Danger Zone</div>
-    <button class="btn danger" style="width:100%;padding:12px;font-size:.88rem" onclick="resetToDefaults()">🗑 Reset to Defaults — Clear All My Data</button>
+  <div style="margin-top:18px;border-top:1px solid var(--border);padding-top:14px;display:flex;gap:10px">
+    <button class="btn" style="flex:1;height:44px" onclick="closeModal('themeModal');openModal('aboutModal')">ℹ About / Help</button>
+  </div>
+  <div style="margin-top:10px;border-top:1px solid var(--border);padding-top:14px">
+    <div style="color:var(--muted);font-size:.7rem;font-family:Consolas,monospace;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Danger Zone</div>
+    <button class="btn danger" style="width:100%;height:46px;font-size:.88rem" onclick="resetToDefaults()">🗑 Reset to Defaults — Clear All My Data</button>
     <div style="color:var(--muted);font-size:.72rem;margin-top:7px;line-height:1.5">Removes all payments, plans and bill history. Reloads with the standard bill list. Cannot be undone.</div>
+  </div>
+</div></div>
+
+<!-- ABOUT / HELP MODAL -->
+<div class="modal-wrap" id="aboutModal"><div class="modal">
+  <button class="close" onclick="closeModal('aboutModal')">x</button>
+  <h2>ℹ About SpendWise</h2>
+
+  <div style="background:rgba(200,242,80,.07);border:1px solid rgba(200,242,80,.2);border-radius:10px;padding:14px;margin-bottom:16px;font-size:.88rem;line-height:1.7">
+    <b style="color:var(--accent);font-size:1rem">SpendWise — Monthly Bill Tracker</b><br>
+    <span style="color:var(--muted2)">Free · No ads · No account · No internet required · No permissions taken</span>
+  </div>
+
+  <div style="font-family:Consolas,monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px">How to Use</div>
+  <div style="font-size:.85rem;line-height:1.8;color:var(--muted2);margin-bottom:16px">
+    <b style="color:var(--text)">Month tab</b> — see what bills are due this month. Tap <b>Mark Paid</b> when done.<br>
+    <b style="color:var(--text)">Paid tab</b> — all bills settled this month with amounts and dates.<br>
+    <b style="color:var(--text)">Next tab</b> — preview of what's coming next month.<br>
+    <b style="color:var(--text)">★ Key tab</b> — important bills only (insurance, big payments). Never miss them.<br>
+    <b style="color:var(--text)">Manage tab</b> — add, edit or delete bills. Overdue ones show in red.<br>
+    <b style="color:var(--text)">Money Plan</b> — enter salary and expenses to see your monthly balance.<br>
+    <b style="color:var(--text)">⋮ Menu</b> → Export saves all your data as a JSON file. Import restores it.<br>
+    <b style="color:var(--text)">⋮ → 2×?</b> — scans for accidental duplicate bills automatically.<br>
+    <b style="color:var(--text)">Prev / Next</b> arrows — browse any past or future month.
+  </div>
+
+  <div style="font-family:Consolas,monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px">Your Data</div>
+  <div style="font-size:.85rem;line-height:1.8;color:var(--muted2);margin-bottom:16px">
+    All data stays on your phone only — never uploaded anywhere.<br>
+    Use <b style="color:var(--text)">Export</b> regularly to keep a backup copy.<br>
+    Use <b style="color:var(--text)">Import</b> to restore or move to another device.
+  </div>
+
+  <div style="font-family:Consolas,monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px">Suggestions &amp; Feedback</div>
+  <div style="font-size:.85rem;line-height:1.8;color:var(--muted2);margin-bottom:16px">
+    Found a bug? Have an idea? Want a new feature?<br>
+    We would love to hear from you — write to us below.
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border2);border-radius:10px;padding:16px;margin-bottom:16px">
+    <div style="font-family:Consolas,monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px">Developer</div>
+    <div style="font-weight:700;font-size:.95rem;margin-bottom:4px">Pandurang Upparamani</div>
+    <div style="color:var(--muted2);font-size:.83rem;line-height:1.9">
+      📞 <a href="tel:+919242266764" style="color:var(--accent);text-decoration:none">+91 92422 66764</a><br>
+      ✉ <a href="mailto:upparamani@gmail.com" style="color:var(--accent);text-decoration:none">upparamani@gmail.com</a><br>
+      🏫 Assistant Professor, ISE Dept<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;KLS Gogte Institute of Technology, Belagavi
+    </div>
+  </div>
+
+  <div style="background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.18);border-radius:10px;padding:14px;margin-bottom:18px">
+    <div style="font-family:Consolas,monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ok);margin-bottom:8px">☕ Support / Donate (Optional)</div>
+    <div style="font-size:.83rem;color:var(--muted2);line-height:1.8">
+      SpendWise is free and always will be. If it saved you from a missed bill or a double payment, and you'd like to say thanks — any amount is welcome!<br><br>
+      <b style="color:var(--text)">UPI / GPay / PhonePe:</b><br>
+      <span style="font-family:Consolas,monospace;color:var(--accent);font-size:.9rem">upparamani@gmail.com</span><br>
+      <span style="font-family:Consolas,monospace;color:var(--accent);font-size:.9rem">9242266764</span>
+    </div>
+  </div>
+
+  <div class="modal-actions">
+    <button class="btn primary" onclick="closeModal('aboutModal')">Got it, thanks!</button>
   </div>
 </div></div>
 
@@ -390,8 +585,10 @@ function undoPay(id,ym=viewYM){const b=bills.find(x=>x.id===id);if(!b)return;con
 function changeMonth(n){viewYM=ymAdd(viewYM,n);render()}
 function switchTab(tab){document.querySelectorAll('.content,.tab,.nav button').forEach(e=>e.classList.remove('active'));document.getElementById('tab-'+tab).classList.add('active');const nav=document.getElementById('nav-'+tab);if(nav)nav.classList.add('active');document.querySelectorAll('.tab').forEach(b=>{if(b.getAttribute('onclick').includes(`'${tab}'`))b.classList.add('active')})}
 function openThemeModal(){openModal('themeModal')}
-function applyTheme(){document.body.classList.remove('theme-light','theme-ink','theme-rose','theme-forest');if(theme&&theme!=='dark')document.body.classList.add('theme-'+theme)}
-function setTheme(value){theme=value||'dark';localStorage.setItem('sw_theme',theme);applyTheme();closeModal('themeModal');toast('Theme saved')}function openModal(id){document.getElementById(id).classList.add('open')}function closeModal(id){document.getElementById(id).classList.remove('open')}function toast(msg){const e=document.getElementById('toast');e.textContent=msg;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
+function applyTheme(){document.body.classList.remove('theme-light','theme-sunrise','theme-ink','theme-rose','theme-forest');if(theme&&theme!=='dark')document.body.classList.add('theme-'+theme)}
+function setTheme(value){theme=value||'dark';localStorage.setItem('sw_theme',theme);applyTheme();closeModal('themeModal');toast('Theme saved')}function toggleMenu(){const m=document.getElementById('mainMenu');m.classList.toggle('open');if(m.classList.contains('open')){setTimeout(()=>document.addEventListener('click',closeMenuOutside),10)}}
+function closeMenuOutside(e){const m=document.getElementById('mainMenu');if(!m.closest('.menu-wrap').contains(e.target)){m.classList.remove('open');document.removeEventListener('click',closeMenuOutside)}}
+function openModal(id){document.getElementById(id).classList.add('open')}function closeModal(id){document.getElementById(id).classList.remove('open')}function toast(msg){const e=document.getElementById('toast');e.textContent=msg;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
 function exportData(){const data={version:'1.2',exportDate:today(),exportType:'all-data-till-date',bills,payments,plans,theme,storage:{sw_bills:localStorage.getItem('sw_bills'),sw_payments:localStorage.getItem('sw_payments'),sw_plans:localStorage.getItem('sw_plans'),sw_theme:localStorage.getItem('sw_theme')}},stamp=new Date().toTimeString().slice(0,8).replaceAll(':',''),name=`spendwise-all-data-${today()}-${stamp}.json`,blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.style.display='none';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(url);a.remove()},1500);toast(`Export started: ${name}`)}
 function clearAllData(){if(!bills.length&&!payments.length&&!Object.keys(plans).length)return toast('No data to clear');if(!confirm('Export a backup before clearing all SpendWise data?'))return toast('Clear cancelled');exportData();if(!confirm('Backup started. Now clear all bills, payments, and plans from this browser?'))return toast('Clear cancelled');bills=[];payments=[];plans={};pendingPay=null;pendingPayYM=null;viewYM=currentYM(0);localStorage.setItem('sw_bills','[]');localStorage.setItem('sw_payments','[]');localStorage.setItem('sw_plans','{}');localStorage.setItem('sw_theme',theme);render();toast('All data cleared')}
 function resetToDefaults(){if(!confirm('Reset everything?\n\nAll your payments, plans and bill changes will be deleted.\nBills will go back to the standard list.\n\nTap OK to confirm.'))return;const curYM=currentYM(0);bills=DEFAULT_BILLS.map(b=>({...b,nextDueYM:curYM}));payments=[];plans={};pendingPay=null;pendingPayYM=null;viewYM=curYM;localStorage.setItem('sw_bills',JSON.stringify(bills));localStorage.setItem('sw_payments','[]');localStorage.setItem('sw_plans','{}');closeModal('themeModal');render();toast('✓ Reset to defaults done')}
